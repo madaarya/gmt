@@ -1,36 +1,77 @@
 {% assign default_paths = site.pages | map: "path" %}
 {% assign page_paths = site.header_pages | default: default_paths %}
-
+<a id="start"></a>
 <div class="nav-container ">
-    <nav class="bar bar-4 bar--transparent bar--absolute" data-fixed-at="200">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-1 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-4 col-xs-offset-4">
-                    <div class="bar__module">
-                        <a href="index.html">
-
-                            <img class="logo logo-dark" alt="logo" src="images/logo-dark.png">
-                            <img class="logo logo-light" alt="logo" src="images/logo-light.png">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-                    <div class="bar__module">
-                        {% if page_paths %}
-                        <ul class="menu-horizontal text-left">
-                          {% for path in page_paths %}
-                          {% assign my_page = site.pages | where: "path", path | first %}
-                          {% if my_page.title %}
-                          <li>
-                            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-                          </li>
-                          {% endif %}
-                          {% endfor %}
-                        </ul>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
+  <nav class="bar bar-toggle bar--transparent bar--absolute bg--dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1 col-sm-2 col-xs-3">
+          <div class="bar__module">
+            <a href="index.html">
+              <img class="logo logo-dark" alt="logo" src="images/logo-dark.png" />
+              <img class="logo logo-light" alt="logo" src="images/logo-light.png" />
+            </a>
+          </div>
         </div>
-    </nav>
+        <div class="col-md-11 col-sm-10 col-xs-9">
+          <div class="bar__module">
+            <div class="modal-instance pull-right">
+              <a class="modal-trigger menu-toggle" href="#">
+                <i class="stack-interface stack-menu"></i>
+              </a>
+              <div class="modal-container menu-fullscreen">
+                <div class="modal-content" data-width="100%" data-height="100%">
+                  <div class="pos-vertical-center pos-asbolute text-center">
+                    <div class="heading-block">
+                      <img alt="Image" src="images/logo-light.png" class="logo image--xs" />
+                      <p class="lead">
+                        Digital Transformation Solution
+                      </p>
+                    </div>
+                    {% if page_paths %}
+                    <ul class="menu-vertical">
+                      {% for path in page_paths %}
+                      {% assign my_page = site.pages | where: "path", path | first %}
+                      {% if my_page.title %}
+                      <li class="h4">
+                        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                      </li>
+                      {% endif %}
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                  </div>
+                  <div class="pos-absolute pos-bottom text-center">
+                    <ul class="social-list list-inline list--hover">
+                      <li>
+                        <a href="#">
+                          <i class="socicon socicon-google icon icon--xs"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="socicon socicon-twitter icon icon--xs"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="socicon socicon-facebook icon icon--xs"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="socicon socicon-instagram icon icon--xs"></i>
+                        </a>
+                      </li>
+                    </ul>
+                    <p class="type--fine-print type--fade">&copy; Copyright 2016 &mdash; Medium Rare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </div>
