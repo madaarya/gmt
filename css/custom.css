@@ -1,1 +1,6 @@
 /*! Place your custom styles here */
+
+.label-circle{
+	height: 26px;
+  min-width: 26px !important;
+}
