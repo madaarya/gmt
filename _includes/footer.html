@@ -26,6 +26,14 @@
             </li>
           </ul>
         </div>
+        {% for lang in site.languageNames %}
+        {% if lang[0] == site.lang %} {% continue %} {% endif %}
+        {% if page.namespace %}
+        <a href="{% tl {{ page.namespace }} {{ lang[0] }} %}">{{ lang[1] }}</a>
+        {% else %}
+        <a href="{{ site.baseurl_root }}/{{ lang[0] }}/">{{ lang[1] }}</a>
+        {% endif %}
+        {% endfor %}
         <div>
           <span class="type--fine-print">©
             <span class="update-year">2018</span> Stack Inc.</span>
@@ -37,10 +45,10 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="js/jquery-3.1.1.min.js" | relative_url }}"></script>
-  <script type="text/javascript" src="js/parallax.js" | relative_url }}"></script>
-  <script type="text/javascript" src="js/smooth-scroll.min.js" | relative_url }}"></script>
-  <script type="text/javascript" src="js/flickity.min.js" | relative_url }}"></script>
-  <script type="text/javascript" src="js/isotope.min.js"></script>
-  <script type="text/javascript" src="js/typed.min.js"></script>
-  <script type="text/javascript" src="js/scripts.js" | relative_url }}"></script>
+  <script type="text/javascript" src="/js/jquery-3.1.1.min.js" | relative_url }}"></script>
+  <script type="text/javascript" src="/js/parallax.js" | relative_url }}"></script>
+  <script type="text/javascript" src="/js/smooth-scroll.min.js" | relative_url }}"></script>
+  <script type="text/javascript" src="/js/flickity.min.js" | relative_url }}"></script>
+  <script type="text/javascript" src="/js/isotope.min.js"></script>
+  <script type="text/javascript" src="/js/typed.min.js"></script>
+  <script type="text/javascript" src="/js/scripts.js" | relative_url }}"></script>
