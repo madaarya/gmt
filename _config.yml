@@ -27,8 +27,8 @@ languages: ["id", "en"]
 exclude_from_localizations: ["js", "images", "css"]
 defaultLang: id
 languageNames:
-  id: Bahasa
-  en: English
+  id: ID
+  en: EN
 encoding: UTF-8
 # Build settings
 markdown: kramdown
