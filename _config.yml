@@ -25,6 +25,11 @@ twitter_username: jekyllrb
 github_username:  jekyll
 languages: ["id", "en"]
 exclude_from_localizations: ["js", "images", "css"]
+defaultLang: id
+languageNames:
+  id: Bahasa
+  en: English
+encoding: UTF-8
 # Build settings
 markdown: kramdown
 theme: minima
