@@ -27,7 +27,7 @@
 </section>
 
 <section class="unpad ">
-	<div class="map-container border--round" data-maps-api-key="AIzaSyAsROu975_xxXljaGRmbaUzCHWrH0HlpUE" data-address="Raya Batujajar 283 Bandung Barat" data-marker-title="Stack" data-map-zoom="18"></div>
+	<div id="map" style="height: 400px;"></div>
 </section>
 <section class="switchable ">
 	<div class="container">
@@ -73,3 +73,20 @@
 		</div>
 	</div>
 </section>
+
+<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: -6.9162768, lng: 107.4914424};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsROu975_xxXljaGRmbaUzCHWrH0HlpUE&callback=initMap">
+    </script>
