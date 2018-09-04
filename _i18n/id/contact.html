@@ -50,18 +50,18 @@
 					</p>
 					<hr class="short">
 					<div class="row">
-						<form class="form-email" data-success="Thanks for your enquiry, we'll be in touch shortly." data-error="Please fill in all fields correctly." data-recaptcha-sitekey="6LdM-20UAAAAAOX5gLcxYolsfpWwkEMDxZt_ZCLC" data-recaptcha-theme="light">
+						<form class="form-email" method="POST" action="https://makeservice.herokuapp.com/megatech/contact" data-success="Thanks for your enquiry, we'll be in touch shortly." data-error="Please fill in all fields correctly." data-recaptcha-sitekey="6LdM-20UAAAAAOX5gLcxYolsfpWwkEMDxZt_ZCLC" data-recaptcha-theme="light">
 							<div class="col-sm-6">
-								<label>Your Name:</label>
-								<input type="text" name="Name" class="validate-required" />
+								<label>Nama:</label>
+								<input type="text" name="contact[name]" class="validate-required" />
 							</div>
 							<div class="col-sm-6">
 								<label>Email:</label>
-								<input type="email" name="email" class="validate-required validate-email" />
+								<input type="email" name="contact[email]" class="validate-required validate-email" />
 							</div>
 							<div class="col-sm-12">
 								<label>Pesan:</label>
-								<textarea rows="4" name="Message" class="validate-required"></textarea>
+								<textarea rows="4" name="contact[message]" class="validate-required"></textarea>
 							</div>
 							<div class="col-sm-5 col-md-4">
 								<button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
@@ -75,18 +75,12 @@
 </section>
 
 <script>
-// Initialize and add the map
 function initMap() {
-  // The location of Uluru
   var uluru = {lat: -6.9162768, lng: 107.4914424};
-  // The map, centered at Uluru
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 17, center: uluru});
-  // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
 </script>
 
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsROu975_xxXljaGRmbaUzCHWrH0HlpUE&callback=initMap">
-    </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsROu975_xxXljaGRmbaUzCHWrH0HlpUE&callback=initMap"></script>
